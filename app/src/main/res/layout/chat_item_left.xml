@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:padding="8dp"
+
+    android:layout_height="wrap_content">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="40dp"
+        android:id="@+id/imageprofilchat"
+        android:layout_height="40dp"
+        android:src="@mipmap/ic_launcher"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/showmassage"
+    android:background="@drawable/leftmassage"
+    android:layout_marginLeft="5dp"
+    android:textSize="18dp"
+    android:padding="6dp"
+    android:hint="Helo"
+    android:layout_centerVertical="true"
+    android:layout_toRightOf="@id/imageprofilchat"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textStatus"
+        android:visibility="gone"
+        android:layout_below="@id/showmassage"/>
+</RelativeLayout>

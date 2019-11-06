@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "507082303092",
+    "firebase_url": "https://aplikasichat-64fad.firebaseio.com",
+    "project_id": "aplikasichat-64fad",
+    "storage_bucket": "aplikasichat-64fad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507082303092:android:d5448f86c88db60c185321",
+        "android_client_info": {
+          "package_name": "com.izrael.aplikasichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507082303092-31gqe3dn5q4dns84kdqmud9lscddqt5t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.izrael.aplikasichat",
+            "certificate_hash": "61e454be4d7a9fa26924dc8abcc6492ab252254b"
+          }
+        },
+        {
+          "client_id": "507082303092-v7r7dl3l027vvs8g1ugjasnvnht3s7cl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhkKplPCU9O9iQDM5BOme87Nx4Y9BjIZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507082303092-v7r7dl3l027vvs8g1ugjasnvnht3s7cl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
