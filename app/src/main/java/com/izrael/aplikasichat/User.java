@@ -1,7 +1,9 @@
 package com.izrael.aplikasichat;
 
 public class User {
-    public User(String id, String username, String imageUrl, String status, String search) {
+    public User(String id, String username, String imageUrl, String status, String search,String verifikasi) {
+        this.verifikasi = verifikasi;
+
         this.id = id;
         this.username = username;
         this.imageUrl = imageUrl;
@@ -49,7 +51,18 @@ public class User {
     private String username;
     private String imageUrl;
     private String status;
+
     private String search;
+
+    public String getVerifikasi() {
+        return verifikasi;
+    }
+
+    public void setVerifikasi(String verifikasi) {
+        this.verifikasi = verifikasi;
+    }
+
+    private String verifikasi;
 
 
     public String getStatus() {

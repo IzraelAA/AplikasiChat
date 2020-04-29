@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -48,6 +49,7 @@ public class profilFragment extends Fragment {
     TextView          textView;
     DatabaseReference reference;
     FirebaseUser      firebaseUser;
+    CardView cardView;
     StorageReference  storageReference;
     private static final int         IMAGE_REQUEST = 1;
     private              Uri         imageUrl;
@@ -60,6 +62,7 @@ public class profilFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
         circleImageView = view.findViewById(R.id.profile_image);
         textView = view.findViewById(R.id.userName);
+        cardView = view.findViewById(R.id.verifikasi);
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -86,7 +89,24 @@ public class profilFragment extends Fragment {
                 openImage();
             }
         });
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().getCurrentUser()
+                        .sendEmailVerification()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Toast.makeText(getContext(), "Lihat Email", Toast.LENGTH_SHORT).show();
+                                }else {
+                                    Toast.makeText(getContext(), "Email Tak Di Temukan", Toast.LENGTH_SHORT).show();
 
+                                }
+                            }
+                        });
+            }
+        });
         return view;
     }
 
@@ -157,6 +177,17 @@ public class profilFragment extends Fragment {
             }else {
                 uploadImage();
             }
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (!user.isEmailVerified()){
+            cardView.setVisibility(View.VISIBLE);
+        }else {
+            cardView.setVisibility(View.GONE);
         }
     }
 }

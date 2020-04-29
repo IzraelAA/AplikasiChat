@@ -131,9 +131,9 @@ public class Menu extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (backprassedtime + 2000 > System.currentTimeMillis()) {
-            backToast.cancel();
+        if (viewPager.getCurrentItem() != 0) {
             super.onBackPressed();
+            backToast.cancel();
             finish();
         } else {
             backToast = Toast.makeText(this, "Tekan Lagi Untuk Keluar", Toast.LENGTH_SHORT);
@@ -188,6 +188,7 @@ public class Menu extends AppCompatActivity {
         public void addFragment(Fragment fragment, String titles) {
             fragments.add(fragment);
             title.add(titles);
+
         }
     }
 
@@ -209,4 +210,4 @@ public class Menu extends AppCompatActivity {
         super.onPause();
         status("offline");
     }
-}
+    }

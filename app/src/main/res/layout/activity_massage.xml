@@ -43,6 +43,7 @@
         android:layout_below="@id/appbar"
         android:layout_above="@id/botoom"/>
 <RelativeLayout
+    android:layout_marginHorizontal="20dp"
     android:layout_width="match_parent"
     android:padding="5dp"
     android:id="@+id/botoom"

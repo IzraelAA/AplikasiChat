@@ -66,13 +66,9 @@ public class usersFragment extends Fragment {
 
             }
         });
-
         return view;
     }
-
     private void searchUser(String a) {
-
-
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild("search")
                 .startAt(a)
@@ -97,11 +93,9 @@ public class usersFragment extends Fragment {
             }
         });
     }
-
     private void readUsers() {
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference  reference    = FirebaseDatabase.getInstance().getReference("Users");
-
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -119,12 +113,9 @@ public class usersFragment extends Fragment {
                     recyclerView.setAdapter(userAdapter);
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
-
 }
